@@ -9,4 +9,16 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+user = Store.joins(:employees).distinct.select(:name)
+# p user
+
+store = Store.create(name: 'Va', annual_revenue: "qwe")
+puts store.errors.messages
+# p store
+# @store1.update(name: 'Burnaby')
+# p @store1
+
+puts store.new_record?
+puts store.save
+puts store.valid?
+p store.errors
